@@ -19,7 +19,7 @@ func registerSystray() {
 	C.registerSystray()
 }
 
-func nativeLoop() {
+func NativeLoop() {
 	C.nativeLoop()
 }
 

@@ -75,7 +75,7 @@ func newMenuItem(title string, tooltip string, parent *MenuItem) *MenuItem {
 // callback. It blocks until systray.Quit() is called.
 func Run(onReady func(), onExit func()) {
 	Register(onReady, onExit)
-	nativeLoop()
+	NativeLoop()
 }
 
 // Register initializes GUI and registers the callbacks but relies on the

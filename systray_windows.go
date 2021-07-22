@@ -773,7 +773,7 @@ func registerSystray() {
 
 }
 
-func nativeLoop() {
+func NativeLoop() {
 	// Main message pump.
 	m := &struct {
 		WindowHandle windows.Handle
