@@ -2,24 +2,18 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
-	"time"
-
 	"github.com/mapleafgo/systray"
 	"github.com/mapleafgo/systray/example/icon"
 	"github.com/skratchdot/open-golang/open"
 )
 
 func main() {
-	onExit := func() {
-		now := time.Now()
-		ioutil.WriteFile(fmt.Sprintf(`on_exit_%d.txt`, now.UnixNano()), []byte(now.String()), 0644)
-	}
-
-	systray.Run(onReady, onExit)
+	systray.Run(onReady, nil)
 }
 
 func onReady() {
+	defer fmt.Println("注册完成")
+
 	systray.SetTemplateIcon(icon.Data, icon.Data)
 	systray.SetTitle("Awesome App")
 	systray.SetTooltip("Lantern")
